@@ -1688,23 +1688,10 @@ export function D3BubbleChartIndependent({ title, height = 500 }: BubbleChartPro
             <div className="flex gap-2">
               <button
                 onClick={() => updateActiveFilters({ dataType: 'value' })}
-                className={`flex-1 px-3 py-2 text-sm rounded-md transition-colors ${
-                  activeFilters.dataType === 'value'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-black hover:bg-gray-200'
-                }`}
+                className="flex-1 px-3 py-2 text-sm rounded-md transition-colors bg-blue-600 text-white cursor-default"
+                disabled
               >
                 Value
-              </button>
-              <button
-                onClick={() => updateActiveFilters({ dataType: 'volume' })}
-                className={`flex-1 px-3 py-2 text-sm rounded-md transition-colors ${
-                  activeFilters.dataType === 'volume'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-black hover:bg-gray-200'
-                }`}
-              >
-                Volume
               </button>
             </div>
           </div>
