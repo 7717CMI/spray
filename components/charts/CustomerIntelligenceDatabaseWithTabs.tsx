@@ -1,109 +1,25 @@
 'use client'
 
-interface DistributorData {
-  distributorCompanyName: string
+interface CustomerData {
+  customerCompanyName: string
+  yearEstablished: string
   headquartered: string
+  noOfEmployees: string
+  revenueTurnover: string
   geographicalPresence: string
-  productOfferingBusinessSegments: string
-  contactPersonDesignation: string
-  website: string
-  emailAddress: string
-  contactNumber: string
+  contactDetails: string
 }
 
-// Sample Distributor data
-const sampleDistributorData: DistributorData[] = [
-  {
-    distributorCompanyName: 'xx',
-    headquartered: 'xx',
-    geographicalPresence: 'xx',
-    productOfferingBusinessSegments: 'xx',
-    contactPersonDesignation: 'xx',
-    website: 'xx',
-    emailAddress: 'xx',
-    contactNumber: 'xx'
-  },
-  {
-    distributorCompanyName: 'xx',
-    headquartered: 'xx',
-    geographicalPresence: 'xx',
-    productOfferingBusinessSegments: 'xx',
-    contactPersonDesignation: 'xx',
-    website: 'xx',
-    emailAddress: 'xx',
-    contactNumber: 'xx'
-  },
-  {
-    distributorCompanyName: 'xx',
-    headquartered: 'xx',
-    geographicalPresence: 'xx',
-    productOfferingBusinessSegments: 'xx',
-    contactPersonDesignation: 'xx',
-    website: 'xx',
-    emailAddress: 'xx',
-    contactNumber: 'xx'
-  },
-  {
-    distributorCompanyName: 'xx',
-    headquartered: 'xx',
-    geographicalPresence: 'xx',
-    productOfferingBusinessSegments: 'xx',
-    contactPersonDesignation: 'xx',
-    website: 'xx',
-    emailAddress: 'xx',
-    contactNumber: 'xx'
-  },
-  {
-    distributorCompanyName: 'xx',
-    headquartered: 'xx',
-    geographicalPresence: 'xx',
-    productOfferingBusinessSegments: 'xx',
-    contactPersonDesignation: 'xx',
-    website: 'xx',
-    emailAddress: 'xx',
-    contactNumber: 'xx'
-  },
-  {
-    distributorCompanyName: 'xx',
-    headquartered: 'xx',
-    geographicalPresence: 'xx',
-    productOfferingBusinessSegments: 'xx',
-    contactPersonDesignation: 'xx',
-    website: 'xx',
-    emailAddress: 'xx',
-    contactNumber: 'xx'
-  },
-  {
-    distributorCompanyName: 'xx',
-    headquartered: 'xx',
-    geographicalPresence: 'xx',
-    productOfferingBusinessSegments: 'xx',
-    contactPersonDesignation: 'xx',
-    website: 'xx',
-    emailAddress: 'xx',
-    contactNumber: 'xx'
-  },
-  {
-    distributorCompanyName: 'xx',
-    headquartered: 'xx',
-    geographicalPresence: 'xx',
-    productOfferingBusinessSegments: 'xx',
-    contactPersonDesignation: 'xx',
-    website: 'xx',
-    emailAddress: 'xx',
-    contactNumber: 'xx'
-  },
-  {
-    distributorCompanyName: 'xx',
-    headquartered: 'xx',
-    geographicalPresence: 'xx',
-    productOfferingBusinessSegments: 'xx',
-    contactPersonDesignation: 'xx',
-    website: 'xx',
-    emailAddress: 'xx',
-    contactNumber: 'xx'
-  }
-]
+// Sample Customer data
+const sampleCustomerData: CustomerData[] = Array.from({ length: 9 }, () => ({
+  customerCompanyName: 'xx',
+  yearEstablished: 'xx',
+  headquartered: 'xx',
+  noOfEmployees: 'xx',
+  revenueTurnover: 'xx',
+  geographicalPresence: 'xx',
+  contactDetails: 'xx'
+}))
 
 interface CustomerIntelligenceDatabaseProps {
   title?: string
@@ -111,49 +27,45 @@ interface CustomerIntelligenceDatabaseProps {
 }
 
 export default function CustomerIntelligenceDatabaseWithTabs({ title = "Intelligence Database", height }: CustomerIntelligenceDatabaseProps) {
-  // Distributor Intelligence Table
-  const renderDistributorTable = () => (
+  // Customer Intelligence Table
+  const renderCustomerTable = () => (
     <div className="overflow-x-auto">
       <table className="min-w-full border-collapse">
         <thead>
-          <tr className="bg-[#B0E0E6]">
-            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-black">
-              Distributor<br />Company Name
+          <tr className="bg-[#4A9B9B]">
+            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-white">
+              Customer Company Name
             </th>
-            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-black">
+            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-white">
+              Year Established
+            </th>
+            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-white">
               Headquartered
             </th>
-            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-black">
-              Geographical<br />Presence
+            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-white">
+              No. of Employees (est.)(if available)
             </th>
-            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-black">
-              Product<br />Offering/Business<br />Segments
+            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-white">
+              Revenue/Turnover<br />(if available), (US$ Mn,<br />2024)Geographical Presence,<br />Revenue
             </th>
-            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-black">
-              Contact Person<br />Designation
+            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-white">
+              Geographical Presence
             </th>
-            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-black">
-              Website
-            </th>
-            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-black">
-              Email Address
-            </th>
-            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-black">
-              Contact Number
+            <th className="border border-gray-300 px-4 py-3 text-left text-sm font-semibold text-white">
+              Contact Details<br />(Website, email address,<br />contact details, address)
             </th>
           </tr>
         </thead>
         <tbody>
-          {sampleDistributorData.map((distributor, index) => (
-            <tr key={index} className={index % 2 === 0 ? 'bg-[#E0F7FA]' : 'bg-white'}>
-              <td className="border border-gray-300 px-4 py-3 text-sm text-black">{distributor.distributorCompanyName}</td>
-              <td className="border border-gray-300 px-4 py-3 text-sm text-black">{distributor.headquartered}</td>
-              <td className="border border-gray-300 px-4 py-3 text-sm text-black">{distributor.geographicalPresence}</td>
-              <td className="border border-gray-300 px-4 py-3 text-sm text-black">{distributor.productOfferingBusinessSegments}</td>
-              <td className="border border-gray-300 px-4 py-3 text-sm text-black">{distributor.contactPersonDesignation}</td>
-              <td className="border border-gray-300 px-4 py-3 text-sm text-black">{distributor.website}</td>
-              <td className="border border-gray-300 px-4 py-3 text-sm text-black">{distributor.emailAddress}</td>
-              <td className="border border-gray-300 px-4 py-3 text-sm text-black">{distributor.contactNumber}</td>
+          {sampleCustomerData.map((customer, index) => (
+            <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-[#E8F4F4]'}>
+              <td className="border border-[#4A9B9B] px-4 py-3 text-sm text-black">{customer.customerCompanyName}</td>
+              <td className="border border-[#4A9B9B] px-4 py-3 text-sm text-black">{customer.yearEstablished}</td>
+              <td className="border border-[#4A9B9B] px-4 py-3 text-sm text-black">{customer.headquartered}</td>
+              <td className="border border-[#4A9B9B] px-4 py-3 text-sm text-black">{customer.noOfEmployees}</td>
+              <td className="border border-[#4A9B9B] px-4 py-3 text-sm text-black">{customer.revenueTurnover}</td>
+              <td className="border border-[#4A9B9B] px-4 py-3 text-sm text-black">{customer.geographicalPresence}</td>
+              <td className="border border-[#4A9B9B] px-4 py-3 text-sm text-black">{customer.contactDetails}</td>
             </tr>
           ))}
         </tbody>
@@ -166,8 +78,7 @@ export default function CustomerIntelligenceDatabaseWithTabs({ title = "Intellig
       <h2 className="text-xl font-bold text-black mb-6">{title}</h2>
 
       <div>
-        <h3 className="text-lg font-bold text-black mb-4">Distributor Intelligence</h3>
-        {renderDistributorTable()}
+        {renderCustomerTable()}
       </div>
     </div>
   )
